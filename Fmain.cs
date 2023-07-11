@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Jenga;
+
 
 namespace DS_III_Proyecto_final_Caja_APP
 {
@@ -36,8 +36,7 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button1_Click(object sender, EventArgs e)
         {
-          Pages.SelectedTab = tabPage1;
-
+        
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -52,23 +51,22 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button2_Click(object sender, EventArgs e)
         {
-          Pages.SelectedTab = tabPage2;
+         
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Pages.SelectedTab = tabPage3;
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Pages.SelectedTab = tabPage4;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Pages.SelectedTab = tabPage5;
+          
         }
     }
 }
