@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB6E4014-11BA-4C22-AF0E-ADC91385D9B1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DS_III_Proyecto_final_Caja_APP</RootNamespace>
+    <AssemblyName>DS III Proyecto final Caja APP</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Charts.WinForms">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Utils">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Bunifu.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Jenga.NET">
+      <HintPath>..\..\..\Downloads\BUNIFU TOOLS\BUNIFU TOOLS\Jenga.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\Krypton.Toolkit.70.22.11.312\lib\net48\Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fmain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fmain.Designer.cs">
+      <DependentUpon>Fmain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fmain.resx">
+      <DependentUpon>Fmain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdobeColorGradient gradient_WhatsApp Image 2023-06-23 at 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Hotel IDS345 Version Icon con letra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Hotel IDS345 Version Transparente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Hotel IDS345 Version Icon con letra1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO PNG HOTEL IDS345.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdobeColorGradient gradient_WhatsApp Image 2023-06-23 at 4 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel Bookings menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel Bookings menu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book hotel menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel rooms menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel rooms 24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel rooms 32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel categories  32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel customers menu 32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel user menu 32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Hotel_IDS345_Version_Icon_Sin  letra remove bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel home button 24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel home button 24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel home button 16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel my account btn 16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel Change password btn  16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel home button 24px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel My account btn 24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel Change password btn  24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel database 24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hotel log-out btn 24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel books1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
