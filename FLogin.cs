@@ -31,5 +31,18 @@ namespace DS_III_Proyecto_final_Caja_APP
         {
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (guna2TextBox1.Text == "Usuario1" && guna2TextBox2.Text == "12345")
+            {
+
+            }
+            else
+            {
+                label1.Visible = true;
+                guna2TextBox2.Clear();
+            }
+        }
     }
 }
