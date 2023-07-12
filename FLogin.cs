@@ -36,13 +36,23 @@ namespace DS_III_Proyecto_final_Caja_APP
         {
             if (guna2TextBox1.Text == "Usuario1" && guna2TextBox2.Text == "12345")
             {
+                FMain fmain  = new FMain();
+                fmain.Show();
+                this.Hide();
 
             }
             else
             {
-                label1.Visible = true;
+                MessageBox.Show("Contraseña o nombre de usuario incorrectas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                //label1.Visible = true;
                 guna2TextBox2.Clear();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

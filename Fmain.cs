@@ -7,7 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+
 
 
 namespace DS_III_Proyecto_final_Caja_APP
@@ -21,7 +23,7 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            /////
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -31,7 +33,8 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void FMain_Load(object sender, EventArgs e)
         {
-
+            uC_AddRoom1.Visible = false;
+            button2.PerformClick();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,7 +54,8 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button2_Click(object sender, EventArgs e)
         {
-         
+            uC_AddRoom1.Visible = true;
+            uC_AddRoom1.BringToFront();
 
         }
 
@@ -67,6 +71,29 @@ namespace DS_III_Proyecto_final_Caja_APP
         private void button5_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FLogin flogin = new FLogin();
+            flogin.Show();
+            this.Hide();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+           Application.Exit();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
