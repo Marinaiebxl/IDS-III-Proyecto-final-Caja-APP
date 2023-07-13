@@ -19,14 +19,15 @@ namespace DS_III_Proyecto_final_Caja_APP.Controllers
 
         private void btnaddroom_Click(object sender, EventArgs e)
         {
-            if (guna2TextBox1.Text != "" && guna2ComboBox1.Text != "" && guna2TextBox2.Text != "" && guna2ComboBox2.Text != "")
+            if (txtRoomNumber.Text != "" && cbroomtype.Text != "" && txtPrice.Text != "" && cbBed.Text != "")
             {
-                string roomnumber = guna2TextBox1.Text;
-                string type = guna2ComboBox1.Text;
-                string bed = guna2TextBox2.Text;
-                Int64 price = Int64.Parse(guna2ComboBox2.Text);
+                string roomnumber = txtRoomNumber.Text;
+                string type = cbroomtype.Text;
+                string bed = txtPrice.Text;
+                Int64 price = Int64.Parse(cbBed.Text);
 
                 UC_AddRoom_Load(this, null);
+                clearALL();
             }
             else
             {
@@ -35,9 +36,28 @@ namespace DS_III_Proyecto_final_Caja_APP.Controllers
 
         }
 
+        public void clearALL()
+        {
+            txtRoomNumber.Clear();
+            cbroomtype.SelectedIndex = -1;
+            cbBed.SelectedIndex = -1;
+            txtPrice.Clear();
+
+        }    
+
         private void UC_AddRoom_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void UC_AddRoom_Leave(object sender, EventArgs e)
+        {
+            clearALL();
+        }
+
+        private void UC_AddRoom_Enter(object sender, EventArgs e)
+        {
+            UC_AddRoom_Load(this, null);
         }
     }
 }
