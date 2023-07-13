@@ -79,10 +79,7 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FLogin flogin = new FLogin();
-            flogin.Show();
-            this.Hide();
-
+            
         }
 
         private void button7_Click(object sender, EventArgs e)

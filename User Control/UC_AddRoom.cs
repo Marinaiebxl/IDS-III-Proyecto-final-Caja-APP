@@ -14,6 +14,7 @@ namespace DS_III_Proyecto_final_Caja_APP.Controllers
     {
         Function fn = new Function();
         string query;
+
         public UC_AddRoom()
         {
             InitializeComponent();
@@ -21,12 +22,14 @@ namespace DS_III_Proyecto_final_Caja_APP.Controllers
 
         private void btnaddroom_Click(object sender, EventArgs e)
         {
-            if (txtRoomNumber.Text != "" && cbroomtype.Text != "" && txtPrice.Text != "" && cbBed.Text != "")
+            if ( txtroomtype.Text != "" && txtPrice.Text != "" && txtlimit.Text != "")
             {
-                string roomnumber = txtRoomNumber.Text;
-                string type = cbroomtype.Text;
-                string bed = txtPrice.Text;
-                Int64 price = Int64.Parse(cbBed.Text);
+                string type = txtroomtype.Text;
+                Int64 limit = Int64.Parse(txtlimit.Text);
+                Int64 price = Int64.Parse(txtPrice.Text);
+
+                query = "INSERT INTO Habitaciones (Descripcion, Limite, precio_por_noche) values ('" + type + "', '" + limit + "', '" + price + "')";
+                fn.setData(query, "Habitación añadida.");
 
                 UC_AddRoom_Load(this, null);
                 clearALL();
@@ -40,9 +43,8 @@ namespace DS_III_Proyecto_final_Caja_APP.Controllers
 
         public void clearALL()
         {
-            txtRoomNumber.Clear();
-            cbroomtype.SelectedIndex = -1;
-            cbBed.SelectedIndex = -1;
+            txtroomtype.Clear();
+            txtlimit.Clear();
             txtPrice.Clear();
 
         }    
