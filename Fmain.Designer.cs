@@ -179,8 +179,8 @@
             this.paneladdroom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.paneladdroom.Controls.Add(this.uC_CustomerRegistration1);
-            this.paneladdroom.Controls.Add(this.uC_AddRoom1);
+          this.paneladdroom.Controls.Add(this.uC_CustomerRegistration1);
+           this.paneladdroom.Controls.Add(this.uC_AddRoom1);
             this.paneladdroom.Location = new System.Drawing.Point(206, 40);
             this.paneladdroom.Name = "paneladdroom";
             this.paneladdroom.Size = new System.Drawing.Size(897, 455);
