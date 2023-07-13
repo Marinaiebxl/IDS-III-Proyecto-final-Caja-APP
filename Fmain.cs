@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DS_III_Proyecto_final_Caja_APP.User_Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,7 @@ namespace DS_III_Proyecto_final_Caja_APP
         private void FMain_Load(object sender, EventArgs e)
         {
             uC_AddRoom1.Visible = false;
+            uC_CustomerRegistration1.Visible = false;
             button2.PerformClick();
         }
 
@@ -66,6 +68,8 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button4_Click(object sender, EventArgs e)
         {
+            uC_CustomerRegistration1.Visible = true;
+            uC_CustomerRegistration1.BringToFront();
         }
 
         private void button5_Click(object sender, EventArgs e)

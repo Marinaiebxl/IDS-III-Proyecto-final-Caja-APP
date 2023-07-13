@@ -12,6 +12,8 @@ namespace DS_III_Proyecto_final_Caja_APP.Controllers
 {
     public partial class UC_AddRoom : UserControl
     {
+        Function fn = new Function();
+        string query;
         public UC_AddRoom()
         {
             InitializeComponent();
@@ -47,7 +49,9 @@ namespace DS_III_Proyecto_final_Caja_APP.Controllers
 
         private void UC_AddRoom_Load(object sender, EventArgs e)
         {
-
+            query = "select * from Habitaciones";
+            DataSet ds = fn.GetData(query);
+            DataGridView1.DataSource = ds.Tables[0];
         }
 
         private void UC_AddRoom_Leave(object sender, EventArgs e)
