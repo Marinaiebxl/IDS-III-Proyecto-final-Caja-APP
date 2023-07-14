@@ -16,7 +16,7 @@ namespace DS_III_Proyecto_final_Caja_APP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FLogin());
+            Application.Run(new FMain());
         }
     }
 }

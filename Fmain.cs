@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace DS_III_Proyecto_final_Caja_APP
 {
     public partial class FMain : Form
     {
+        Function fn = new Function();
         public FMain()
         {
             InitializeComponent();
@@ -34,14 +36,16 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void FMain_Load(object sender, EventArgs e)
         {
-            uC_AddRoom1.Visible = false;
             uC_CustomerRegistration1.Visible = false;
-            button2.PerformClick();
+            uC_RoomRegistration1.Visible = false;
+            btnAddCustomers.PerformClick();
+
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-        
+       
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -56,8 +60,10 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            uC_AddRoom1.Visible = true;
-            uC_AddRoom1.BringToFront();
+            
+            uC_RoomRegistration1.Visible = true;
+            //button2.PerformClick();
+            uC_RoomRegistration1.BringToFront();
 
         }
 
@@ -95,6 +101,11 @@ namespace DS_III_Proyecto_final_Caja_APP
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void uC_CustomerRegistration1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

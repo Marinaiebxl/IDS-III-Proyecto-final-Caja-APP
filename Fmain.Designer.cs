@@ -34,13 +34,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddCustomers = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnAddCustomers = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
@@ -53,10 +53,10 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
             this.paneladdroom = new System.Windows.Forms.Panel();
-            this.uC_CustomerRegistration1 = new DS_III_Proyecto_final_Caja_APP.User_Control.UC_CustomerRegistration();
-            this.uC_AddRoom1 = new DS_III_Proyecto_final_Caja_APP.Controllers.UC_AddRoom();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_RoomRegistration1 = new DS_III_Proyecto_final_Caja_APP.User_Control.UC_RoomRegistration();
+            this.uC_CustomerRegistration1 = new DS_III_Proyecto_final_Caja_APP.User_Control.UC_CustomerRegistration();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -110,30 +110,29 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnAddCustomers);
             this.panel2.Location = new System.Drawing.Point(3, 146);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(186, 35);
             this.panel2.TabIndex = 9;
             // 
-            // button1
+            // btnAddCustomers
             // 
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(103)))), ((int)(((byte)(78)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::DS_III_Proyecto_final_Caja_APP.Properties.Resources.hotel_books;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-17, -25);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(257, 84);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "                     Bookings";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddCustomers.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomers.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomers.ForeColor = System.Drawing.Color.White;
+            this.btnAddCustomers.Image = global::DS_III_Proyecto_final_Caja_APP.Properties.Resources.hotel_customers_menu_32px;
+            this.btnAddCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCustomers.Location = new System.Drawing.Point(-17, -25);
+            this.btnAddCustomers.Name = "btnAddCustomers";
+            this.btnAddCustomers.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnAddCustomers.Size = new System.Drawing.Size(257, 84);
+            this.btnAddCustomers.TabIndex = 10;
+            this.btnAddCustomers.Text = "                    Customers";
+            this.btnAddCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCustomers.UseVisualStyleBackColor = false;
+            this.btnAddCustomers.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel3
             // 
@@ -189,29 +188,30 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btnAddCustomers);
+            this.panel5.Controls.Add(this.button1);
             this.panel5.Location = new System.Drawing.Point(3, 269);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(186, 35);
             this.panel5.TabIndex = 12;
             // 
-            // btnAddCustomers
+            // button1
             // 
-            this.btnAddCustomers.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomers.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomers.Image = global::DS_III_Proyecto_final_Caja_APP.Properties.Resources.hotel_customers_menu_32px;
-            this.btnAddCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCustomers.Location = new System.Drawing.Point(-17, -25);
-            this.btnAddCustomers.Name = "btnAddCustomers";
-            this.btnAddCustomers.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnAddCustomers.Size = new System.Drawing.Size(257, 84);
-            this.btnAddCustomers.TabIndex = 10;
-            this.btnAddCustomers.Text = "                    Customers";
-            this.btnAddCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCustomers.UseVisualStyleBackColor = false;
-            this.btnAddCustomers.Click += new System.EventHandler(this.button4_Click);
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(103)))), ((int)(((byte)(78)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::DS_III_Proyecto_final_Caja_APP.Properties.Resources.hotel_books;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(-21, -27);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(257, 84);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "                     Bookings";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel6
             // 
@@ -324,12 +324,30 @@
             this.paneladdroom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.paneladdroom.Controls.Add(this.uC_RoomRegistration1);
             this.paneladdroom.Controls.Add(this.uC_CustomerRegistration1);
-            this.paneladdroom.Controls.Add(this.uC_AddRoom1);
             this.paneladdroom.Location = new System.Drawing.Point(206, 40);
             this.paneladdroom.Name = "paneladdroom";
-            this.paneladdroom.Size = new System.Drawing.Size(940, 479);
+            this.paneladdroom.Size = new System.Drawing.Size(925, 479);
             this.paneladdroom.TabIndex = 13;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 30;
+            this.guna2Elipse2.TargetControl = this;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // uC_RoomRegistration1
+            // 
+            this.uC_RoomRegistration1.Location = new System.Drawing.Point(3, 3);
+            this.uC_RoomRegistration1.Name = "uC_RoomRegistration1";
+            this.uC_RoomRegistration1.Size = new System.Drawing.Size(881, 443);
+            this.uC_RoomRegistration1.TabIndex = 2;
+            this.uC_RoomRegistration1.Visible = false;
             // 
             // uC_CustomerRegistration1
             // 
@@ -337,23 +355,7 @@
             this.uC_CustomerRegistration1.Name = "uC_CustomerRegistration1";
             this.uC_CustomerRegistration1.Size = new System.Drawing.Size(897, 443);
             this.uC_CustomerRegistration1.TabIndex = 1;
-            // 
-            // uC_AddRoom1
-            // 
-            this.uC_AddRoom1.Location = new System.Drawing.Point(0, 26);
-            this.uC_AddRoom1.Name = "uC_AddRoom1";
-            this.uC_AddRoom1.Size = new System.Drawing.Size(897, 434);
-            this.uC_AddRoom1.TabIndex = 0;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 30;
-            this.guna2Elipse1.TargetControl = this.paneladdroom;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 30;
-            this.guna2Elipse2.TargetControl = this;
+            this.uC_CustomerRegistration1.Load += new System.EventHandler(this.uC_CustomerRegistration1_Load);
             // 
             // FMain
             // 
@@ -373,6 +375,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FMain";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FMain_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -417,10 +420,10 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Panel paneladdroom;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Controllers.UC_AddRoom uC_AddRoom1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private User_Control.UC_CustomerRegistration uC_CustomerRegistration1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private User_Control.UC_RoomRegistration uC_RoomRegistration1;
     }
 }
 

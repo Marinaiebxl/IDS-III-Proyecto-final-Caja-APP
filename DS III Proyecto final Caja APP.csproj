@@ -56,12 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Function.cs" />
-    <Compile Include="User Control\UC_AddRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control\UC_AddRoom.Designer.cs">
-      <DependentUpon>UC_AddRoom.cs</DependentUpon>
-    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +68,11 @@
     <Compile Include="Fmain.Designer.cs">
       <DependentUpon>Fmain.cs</DependentUpon>
     </Compile>
+    <Compile Include="hotelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hotelDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,9 +82,12 @@
     <Compile Include="User Control\UC_CustomerRegistration.Designer.cs">
       <DependentUpon>UC_CustomerRegistration.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="User Control\UC_AddRoom.resx">
-      <DependentUpon>UC_AddRoom.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="User Control\UC_RoomRegistration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_RoomRegistration.Designer.cs">
+      <DependentUpon>UC_RoomRegistration.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +107,20 @@
     <EmbeddedResource Include="User Control\UC_CustomerRegistration.resx">
       <DependentUpon>UC_CustomerRegistration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_RoomRegistration.resx">
+      <DependentUpon>UC_RoomRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="hotelDataSet.xsc">
+      <DependentUpon>hotelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hotelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hotelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hotelDataSet.xss">
+      <DependentUpon>hotelDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
