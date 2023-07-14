@@ -250,7 +250,7 @@
             this.btnCalcularDias.Name = "btnCalcularDias";
             this.btnCalcularDias.Size = new System.Drawing.Size(134, 45);
             this.btnCalcularDias.TabIndex = 41;
-            this.btnCalcularDias.Text = "Calcular Días";
+            this.btnCalcularDias.Text = "Calcular Noches";
             this.btnCalcularDias.Click += new System.EventHandler(this.btnCalcularDias_Click);
             // 
             // txtCalcDia
@@ -304,6 +304,7 @@
             this.Controls.Add(this.label7);
             this.Name = "UC_RoomRegistration";
             this.Size = new System.Drawing.Size(897, 443);
+            this.Load += new System.EventHandler(this.UC_RoomRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

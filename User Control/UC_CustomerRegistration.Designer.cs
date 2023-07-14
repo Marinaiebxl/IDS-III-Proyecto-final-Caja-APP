@@ -46,23 +46,25 @@
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSetTableAdapters.EmpleadosTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.empleadosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.huespedesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.huespedesTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSetTableAdapters.HuespedesTableAdapter();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.hotelDataSet3 = new DS_III_Proyecto_final_Caja_APP.hotelDataSet3();
+            this.buscarHuespedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buscarHuespedTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSet3TableAdapters.BuscarHuespedTableAdapter();
             this.iDHuespedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isdeletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.huespedesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buscarHuespedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -158,6 +160,7 @@
             this.txtapellidos.SelectedText = "";
             this.txtapellidos.Size = new System.Drawing.Size(260, 36);
             this.txtapellidos.TabIndex = 7;
+            this.txtapellidos.TextChanged += new System.EventHandler(this.txtapellidos_TextChanged);
             // 
             // txttelefono
             // 
@@ -178,6 +181,7 @@
             this.txttelefono.SelectedText = "";
             this.txttelefono.Size = new System.Drawing.Size(260, 36);
             this.txttelefono.TabIndex = 8;
+            this.txttelefono.TextChanged += new System.EventHandler(this.txttelefono_TextChanged);
             // 
             // txtcorreo
             // 
@@ -245,31 +249,57 @@
             this.iDHuespedDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidosDataGridViewTextBoxColumn,
-            this.telefonoDataGridViewTextBoxColumn,
-            this.isdeletedDataGridViewCheckBoxColumn,
-            this.createdatDataGridViewTextBoxColumn,
-            this.updatedatDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.huespedesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(338, 116);
+            this.telefonoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.buscarHuespedBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(356, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(489, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(471, 219);
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // empleadosBindingSource1
-            // 
-            this.empleadosBindingSource1.DataMember = "Empleados";
-            this.empleadosBindingSource1.DataSource = this.hotelDataSetBindingSource;
             // 
             // huespedesBindingSource
             // 
             this.huespedesBindingSource.DataMember = "Huespedes";
             this.huespedesBindingSource.DataSource = this.hotelDataSetBindingSource;
             // 
+            // empleadosBindingSource1
+            // 
+            this.empleadosBindingSource1.DataMember = "Empleados";
+            this.empleadosBindingSource1.DataSource = this.hotelDataSetBindingSource;
+            // 
             // huespedesTableAdapter
             // 
             this.huespedesTableAdapter.ClearBeforeFill = true;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(563, 349);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(101, 45);
+            this.guna2Button1.TabIndex = 26;
+            this.guna2Button1.Text = "Refresh";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // hotelDataSet3
+            // 
+            this.hotelDataSet3.DataSetName = "hotelDataSet3";
+            this.hotelDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // buscarHuespedBindingSource
+            // 
+            this.buscarHuespedBindingSource.DataMember = "BuscarHuesped";
+            this.buscarHuespedBindingSource.DataSource = this.hotelDataSet3;
+            // 
+            // buscarHuespedTableAdapter
+            // 
+            this.buscarHuespedTableAdapter.ClearBeforeFill = true;
             // 
             // iDHuespedDataGridViewTextBoxColumn
             // 
@@ -296,39 +326,6 @@
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             // 
-            // isdeletedDataGridViewCheckBoxColumn
-            // 
-            this.isdeletedDataGridViewCheckBoxColumn.DataPropertyName = "is_deleted";
-            this.isdeletedDataGridViewCheckBoxColumn.HeaderText = "is_deleted";
-            this.isdeletedDataGridViewCheckBoxColumn.Name = "isdeletedDataGridViewCheckBoxColumn";
-            // 
-            // createdatDataGridViewTextBoxColumn
-            // 
-            this.createdatDataGridViewTextBoxColumn.DataPropertyName = "created_at";
-            this.createdatDataGridViewTextBoxColumn.HeaderText = "created_at";
-            this.createdatDataGridViewTextBoxColumn.Name = "createdatDataGridViewTextBoxColumn";
-            // 
-            // updatedatDataGridViewTextBoxColumn
-            // 
-            this.updatedatDataGridViewTextBoxColumn.DataPropertyName = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.HeaderText = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.Name = "updatedatDataGridViewTextBoxColumn";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(557, 290);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(101, 45);
-            this.guna2Button1.TabIndex = 26;
-            this.guna2Button1.Text = "Refresh";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
             // UC_CustomerRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,8 +349,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.huespedesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buscarHuespedBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,16 +377,16 @@
         private hotelDataSet hotelDataSet;
         private hotelDataSetTableAdapters.EmpleadosTableAdapter empleadosTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDHuespedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isdeletedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource huespedesBindingSource;
         private System.Windows.Forms.BindingSource empleadosBindingSource1;
         private hotelDataSetTableAdapters.HuespedesTableAdapter huespedesTableAdapter;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDHuespedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource buscarHuespedBindingSource;
+        private hotelDataSet3 hotelDataSet3;
+        private hotelDataSet3TableAdapters.BuscarHuespedTableAdapter buscarHuespedTableAdapter;
     }
 }

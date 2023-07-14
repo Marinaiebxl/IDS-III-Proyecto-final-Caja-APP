@@ -38,6 +38,9 @@ namespace DS_III_Proyecto_final_Caja_APP
         {
             uC_CustomerRegistration1.Visible = false;
             uC_RoomRegistration1.Visible = false;
+            uC_CreditCard1.Visible = false;
+            uC_Services1.Visible = false;
+            uC_Factura1.Visible = false;
             btnAddCustomers.PerformClick();
 
            
@@ -45,7 +48,8 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button1_Click(object sender, EventArgs e)
         {
-       
+            uC_Services1.Visible = true;
+            uC_Services1.BringToFront();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -80,7 +84,8 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button5_Click(object sender, EventArgs e)
         {
-          
+            uC_Factura1.Visible = true;
+            uC_Factura1.BringToFront();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -95,7 +100,8 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button8_Click(object sender, EventArgs e)
         {
-           
+            uC_CreditCard1.Visible = true;
+            uC_CreditCard1.BringToFront();
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

@@ -76,5 +76,10 @@ namespace DS_III_Proyecto_final_Caja_APP.User_Control
         {
 
         }
+
+        private void UC_RoomRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
