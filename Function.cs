@@ -11,7 +11,7 @@ namespace DS_III_Proyecto_final_Caja_APP
 {
     internal class Function
     {
-        protected SqlConnection GetConnection()
+        public SqlConnection GetConnection()
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "data source = SUSANPC\\;database=hotel;Trusted_Connection=True; TrustServerCertificate=True;";
@@ -43,6 +43,19 @@ namespace DS_III_Proyecto_final_Caja_APP
             con.Close();
 
             MessageBox.Show(" '"+message+"' ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+       
+        }
+        // para leer los datos como: Bed limit, Room Type y price
+        public SqlDataReader getForCombo(string query)
+        {
+            SqlConnection con = GetConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection= con;
+            con.Open();
+            cmd = new SqlCommand(query, con);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            return sdr;
+
         }
     }
 }

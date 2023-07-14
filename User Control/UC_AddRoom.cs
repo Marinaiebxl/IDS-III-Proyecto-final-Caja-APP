@@ -65,5 +65,25 @@ namespace DS_III_Proyecto_final_Caja_APP.Controllers
         {
             UC_AddRoom_Load(this, null);
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtroomtype_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtlimit_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
