@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.txtname = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,32 +38,31 @@
             this.txtapellidos = new Guna.UI2.WinForms.Guna2TextBox();
             this.txttelefono = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtcorreo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.AlloeRoombtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.hotelDataSet = new DS_III_Proyecto_final_Caja_APP.hotelDataSet();
-            this.hotelDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empleadosTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSetTableAdapters.EmpleadosTableAdapter();
+            this.hotelDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new DS_III_Proyecto_final_Caja_APP.hotelDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.huespedesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empleadosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.huespedesTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSetTableAdapters.HuespedesTableAdapter();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.hotelDataSet3 = new DS_III_Proyecto_final_Caja_APP.hotelDataSet3();
-            this.buscarHuespedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buscarHuespedTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSet3TableAdapters.BuscarHuespedTableAdapter();
             this.iDHuespedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSetBindingSource)).BeginInit();
+            this.buscarHuespedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet3 = new DS_III_Proyecto_final_Caja_APP.hotelDataSet3();
+            this.huespedesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.buscarHuespedTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSet3TableAdapters.BuscarHuespedTableAdapter();
+            this.empleadosTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSetTableAdapters.EmpleadosTableAdapter();
+            this.huespedesTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSetTableAdapters.HuespedesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buscarHuespedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.huespedesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buscarHuespedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -93,16 +91,6 @@
             this.txtname.TabIndex = 0;
             this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
             this.txtname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtname_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Facturación";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -203,42 +191,20 @@
             this.txtcorreo.Size = new System.Drawing.Size(260, 36);
             this.txtcorreo.TabIndex = 9;
             // 
-            // AlloeRoombtn
+            // empleadosBindingSource
             // 
-            this.AlloeRoombtn.AutoRoundedCorners = true;
-            this.AlloeRoombtn.BorderRadius = 21;
-            this.AlloeRoombtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AlloeRoombtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AlloeRoombtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AlloeRoombtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AlloeRoombtn.FillColor = System.Drawing.Color.DarkCyan;
-            this.AlloeRoombtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AlloeRoombtn.ForeColor = System.Drawing.Color.Black;
-            this.AlloeRoombtn.Location = new System.Drawing.Point(78, 349);
-            this.AlloeRoombtn.Name = "AlloeRoombtn";
-            this.AlloeRoombtn.Size = new System.Drawing.Size(180, 45);
-            this.AlloeRoombtn.TabIndex = 24;
-            this.AlloeRoombtn.Text = "Crear Factura";
-            this.AlloeRoombtn.Click += new System.EventHandler(this.AlloeRoombtn_Click);
-            // 
-            // hotelDataSet
-            // 
-            this.hotelDataSet.DataSetName = "hotelDataSet";
-            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.empleadosBindingSource.DataMember = "Empleados";
+            this.empleadosBindingSource.DataSource = this.hotelDataSetBindingSource;
             // 
             // hotelDataSetBindingSource
             // 
             this.hotelDataSetBindingSource.DataSource = this.hotelDataSet;
             this.hotelDataSetBindingSource.Position = 0;
             // 
-            // empleadosBindingSource
+            // hotelDataSet
             // 
-            this.empleadosBindingSource.DataMember = "Empleados";
-            this.empleadosBindingSource.DataSource = this.hotelDataSetBindingSource;
-            // 
-            // empleadosTableAdapter
-            // 
-            this.empleadosTableAdapter.ClearBeforeFill = true;
+            this.hotelDataSet.DataSetName = "hotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView1
             // 
@@ -257,49 +223,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(471, 219);
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // huespedesBindingSource
-            // 
-            this.huespedesBindingSource.DataMember = "Huespedes";
-            this.huespedesBindingSource.DataSource = this.hotelDataSetBindingSource;
-            // 
-            // empleadosBindingSource1
-            // 
-            this.empleadosBindingSource1.DataMember = "Empleados";
-            this.empleadosBindingSource1.DataSource = this.hotelDataSetBindingSource;
-            // 
-            // huespedesTableAdapter
-            // 
-            this.huespedesTableAdapter.ClearBeforeFill = true;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(563, 349);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(101, 45);
-            this.guna2Button1.TabIndex = 26;
-            this.guna2Button1.Text = "Refresh";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // hotelDataSet3
-            // 
-            this.hotelDataSet3.DataSetName = "hotelDataSet3";
-            this.hotelDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // buscarHuespedBindingSource
-            // 
-            this.buscarHuespedBindingSource.DataMember = "BuscarHuesped";
-            this.buscarHuespedBindingSource.DataSource = this.hotelDataSet3;
-            // 
-            // buscarHuespedTableAdapter
-            // 
-            this.buscarHuespedTableAdapter.ClearBeforeFill = true;
             // 
             // iDHuespedDataGridViewTextBoxColumn
             // 
@@ -326,13 +249,59 @@
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
             // 
+            // buscarHuespedBindingSource
+            // 
+            this.buscarHuespedBindingSource.DataMember = "BuscarHuesped";
+            this.buscarHuespedBindingSource.DataSource = this.hotelDataSet3;
+            // 
+            // hotelDataSet3
+            // 
+            this.hotelDataSet3.DataSetName = "hotelDataSet3";
+            this.hotelDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // huespedesBindingSource
+            // 
+            this.huespedesBindingSource.DataMember = "Huespedes";
+            this.huespedesBindingSource.DataSource = this.hotelDataSetBindingSource;
+            // 
+            // empleadosBindingSource1
+            // 
+            this.empleadosBindingSource1.DataMember = "Empleados";
+            this.empleadosBindingSource1.DataSource = this.hotelDataSetBindingSource;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(563, 349);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(101, 45);
+            this.guna2Button1.TabIndex = 26;
+            this.guna2Button1.Text = "Refresh";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // buscarHuespedTableAdapter
+            // 
+            this.buscarHuespedTableAdapter.ClearBeforeFill = true;
+            // 
+            // empleadosTableAdapter
+            // 
+            this.empleadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // huespedesTableAdapter
+            // 
+            this.huespedesTableAdapter.ClearBeforeFill = true;
+            // 
             // UC_CustomerRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.AlloeRoombtn);
             this.Controls.Add(this.txtcorreo);
             this.Controls.Add(this.txttelefono);
             this.Controls.Add(this.txtapellidos);
@@ -340,19 +309,18 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtname);
             this.Name = "UC_CustomerRegistration";
             this.Size = new System.Drawing.Size(850, 443);
             this.Load += new System.EventHandler(this.UC_CustomerRegistration_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buscarHuespedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.huespedesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buscarHuespedBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,7 +330,6 @@
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2TextBox txtname;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -370,7 +337,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtcorreo;
         private Guna.UI2.WinForms.Guna2TextBox txttelefono;
         private Guna.UI2.WinForms.Guna2TextBox txtapellidos;
-        private Guna.UI2.WinForms.Guna2Button AlloeRoombtn;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private System.Windows.Forms.BindingSource empleadosBindingSource;
         private System.Windows.Forms.BindingSource hotelDataSetBindingSource;

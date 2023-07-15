@@ -46,6 +46,9 @@
             this.btnCalcularDias = new Guna.UI2.WinForms.Guna2Button();
             this.txtCalcDia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtHuesped = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnGenerarFact = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -276,16 +279,65 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 35);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Coral;
+            this.label1.Location = new System.Drawing.Point(46, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.Size = new System.Drawing.Size(148, 24);
             this.label1.TabIndex = 43;
-            this.label1.Text = "Cargos Por Habitación";
+            this.label1.Text = "Reservaciones";
+            // 
+            // txtHuesped
+            // 
+            this.txtHuesped.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtHuesped.DefaultText = "";
+            this.txtHuesped.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtHuesped.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtHuesped.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtHuesped.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtHuesped.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtHuesped.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtHuesped.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtHuesped.Location = new System.Drawing.Point(299, 66);
+            this.txtHuesped.Name = "txtHuesped";
+            this.txtHuesped.PasswordChar = '\0';
+            this.txtHuesped.PlaceholderText = "";
+            this.txtHuesped.SelectedText = "";
+            this.txtHuesped.Size = new System.Drawing.Size(141, 36);
+            this.txtHuesped.TabIndex = 44;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(241, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Cliente";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // btnGenerarFact
+            // 
+            this.btnGenerarFact.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarFact.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarFact.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGenerarFact.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGenerarFact.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGenerarFact.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarFact.Location = new System.Drawing.Point(316, 376);
+            this.btnGenerarFact.Name = "btnGenerarFact";
+            this.btnGenerarFact.Size = new System.Drawing.Size(180, 45);
+            this.btnGenerarFact.TabIndex = 46;
+            this.btnGenerarFact.Text = "Generar";
+            this.btnGenerarFact.Click += new System.EventHandler(this.btnGenerarFact_Click);
             // 
             // UC_RoomRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnGenerarFact);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtHuesped);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCalcDia);
             this.Controls.Add(this.btnCalcularDias);
@@ -329,5 +381,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker checkin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txtHuesped;
+        private Guna.UI2.WinForms.Guna2Button btnGenerarFact;
     }
 }

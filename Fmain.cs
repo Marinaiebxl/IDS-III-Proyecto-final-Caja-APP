@@ -41,6 +41,7 @@ namespace DS_III_Proyecto_final_Caja_APP
             uC_CreditCard1.Visible = false;
             uC_Services1.Visible = false;
             uC_Factura1.Visible = false;
+            facturaReport1.Visible = false;
             btnAddCustomers.PerformClick();
 
            
@@ -84,8 +85,11 @@ namespace DS_III_Proyecto_final_Caja_APP
 
         private void button5_Click(object sender, EventArgs e)
         {
-            uC_Factura1.Visible = true;
-            uC_Factura1.BringToFront();
+            facturaReport1.Visible = true;
+            facturaReport1.BringToFront();
+
+            //uC_Factura1.Visible = true;
+            //uC_Factura1.BringToFront();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -110,6 +114,11 @@ namespace DS_III_Proyecto_final_Caja_APP
         }
 
         private void uC_CustomerRegistration1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facturaReport2_Load(object sender, EventArgs e)
         {
 
         }

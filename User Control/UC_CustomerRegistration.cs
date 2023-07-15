@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+﻿using DS_III_Proyecto_final_Caja_APP.hotelDataSetTableAdapters;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace DS_III_Proyecto_final_Caja_APP.User_Control
 {
@@ -123,7 +125,23 @@ namespace DS_III_Proyecto_final_Caja_APP.User_Control
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
-           
+            //string nombre = txtNombre.Text;
+            //string apellidos = txtApellidos.Text;
+
+            using (SqlConnection connection = fn.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("BuscarHuesped", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Nombre", txtname.Text);
+                command.Parameters.AddWithValue("@Apellidos", txtapellidos.Text);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                dataGridView1.DataSource = dataTable;
+            }
 
 
 

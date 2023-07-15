@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="hotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cuentas_por_cobrar">
+          <Key>
+            <PropertyRef Name="id_cuenta" />
+          </Key>
+          <Property Name="id_cuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_factura" Type="int" Nullable="false" />
+          <Property Name="Fecha_vencimiento" Type="date" Nullable="false" />
+          <Property Name="Balance" Type="int" Nullable="false" />
+          <Property Name="Is_deleted" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="updated_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="ID_Empleado" />
+          </Key>
+          <Property Name="ID_Empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="Dirección" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="Teléfono" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Sueldo" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="is_deleted" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="updated_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="ID_Factura" />
+          </Key>
+          <Property Name="ID_Factura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Monto_total" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="Id_reservacion" Type="int" Nullable="false" />
+          <Property Name="is_deleted" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="updated_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Habitaciones">
+          <Key>
+            <PropertyRef Name="ID_Habitacion" />
+          </Key>
+          <Property Name="ID_Habitacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="Limite" Type="int" Nullable="false" />
+          <Property Name="precio_por_noche" Type="int" Nullable="false" />
+          <Property Name="is_deleted" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="updated_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Huespedes">
+          <Key>
+            <PropertyRef Name="ID_Huesped" />
+          </Key>
+          <Property Name="ID_Huesped" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="Telefono" Type="int" Nullable="false" />
+          <Property Name="is_deleted" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="updated_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Servicio">
+          <Key>
+            <PropertyRef Name="id_servicio" />
+          </Key>
+          <Property Name="id_servicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="precio" Type="int" Nullable="false" />
+          <Property Name="is_deleted" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="updated_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiciosFactura">
+          <Key>
+            <PropertyRef Name="id_servicio" />
+            <PropertyRef Name="id_huesped" />
+          </Key>
+          <Property Name="id_servicio" Type="int" Nullable="false" />
+          <Property Name="id_huesped" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="55" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="55" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Empleados__id_us__5CD6CB2B">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__id_hu__534D60F1">
+          <End Role="Huespedes" Type="Self.Huespedes" Multiplicity="1" />
+          <End Role="ServiciosFactura" Type="Self.ServiciosFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Huespedes">
+              <PropertyRef Name="ID_Huesped" />
+            </Principal>
+            <Dependent Role="ServiciosFactura">
+              <PropertyRef Name="id_huesped" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__id_se__52593CB8">
+          <End Role="Servicio" Type="Self.Servicio" Multiplicity="1" />
+          <End Role="ServiciosFactura" Type="Self.ServiciosFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicio">
+              <PropertyRef Name="id_servicio" />
+            </Principal>
+            <Dependent Role="ServiciosFactura">
+              <PropertyRef Name="id_servicio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="BuscarHuesped" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apellidos" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="LoginProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ObtenerDatosHabitacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_Habitacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ObtenerDatosHuespedPorTelefono" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Telefono" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ObtenerDatosServicioPorIdHuesped" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdHuesped" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ObtenerTotalPreciosServicioPorIdHuesped" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdHuesped" Type="int" Mode="In" />
+          <Parameter Name="TotalPrecios" Type="int" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="hotelModelStoreContainer">
+          <EntitySet Name="Cuentas_por_cobrar" EntityType="Self.Cuentas_por_cobrar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Habitaciones" EntityType="Self.Habitaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Huespedes" EntityType="Self.Huespedes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiciosFactura" EntityType="Self.ServiciosFactura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Empleados__id_us__5CD6CB2B" Association="Self.FK__Empleados__id_us__5CD6CB2B">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__id_hu__534D60F1" Association="Self.FK__Servicios__id_hu__534D60F1">
+            <End Role="Huespedes" EntitySet="Huespedes" />
+            <End Role="ServiciosFactura" EntitySet="ServiciosFactura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__id_se__52593CB8" Association="Self.FK__Servicios__id_se__52593CB8">
+            <End Role="Servicio" EntitySet="Servicio" />
+            <End Role="ServiciosFactura" EntitySet="ServiciosFactura" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cuentas_por_cobrar">
+          <Key>
+            <PropertyRef Name="id_cuenta" />
+          </Key>
+          <Property Name="id_cuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_factura" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_vencimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Balance" Type="Int32" Nullable="false" />
+          <Property Name="Is_deleted" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="ID_Empleado" />
+          </Key>
+          <Property Name="ID_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dirección" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Teléfono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sueldo" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="is_deleted" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Empleados__id_us__5CD6CB2B" FromRole="Empleados" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="ID_Factura" />
+          </Key>
+          <Property Name="ID_Factura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Monto_total" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id_reservacion" Type="Int32" Nullable="false" />
+          <Property Name="is_deleted" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Habitaciones">
+          <Key>
+            <PropertyRef Name="ID_Habitacion" />
+          </Key>
+          <Property Name="ID_Habitacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Limite" Type="Int32" Nullable="false" />
+          <Property Name="precio_por_noche" Type="Int32" Nullable="false" />
+          <Property Name="is_deleted" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Huespedes">
+          <Key>
+            <PropertyRef Name="ID_Huesped" />
+          </Key>
+          <Property Name="ID_Huesped" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="Int32" Nullable="false" />
+          <Property Name="is_deleted" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Servicio" Relationship="Self.ServiciosFactura" FromRole="Huespedes" ToRole="Servicio" />
+        </EntityType>
+        <EntityType Name="Servicio">
+          <Key>
+            <PropertyRef Name="id_servicio" />
+          </Key>
+          <Property Name="id_servicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precio" Type="Int32" Nullable="false" />
+          <Property Name="is_deleted" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Huespedes" Relationship="Self.ServiciosFactura" FromRole="Servicio" ToRole="Huespedes" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="55" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK__Empleados__id_us__5CD6CB2B" FromRole="Usuarios" ToRole="Empleados" />
+        </EntityType>
+        <Association Name="FK__Empleados__id_us__5CD6CB2B">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ServiciosFactura">
+          <End Role="Huespedes" Type="Self.Huespedes" Multiplicity="*" />
+          <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="hotelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cuentas_por_cobrar" EntityType="Self.Cuentas_por_cobrar" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" />
+          <EntitySet Name="Habitaciones" EntityType="Self.Habitaciones" />
+          <EntitySet Name="Huespedes" EntityType="Self.Huespedes" />
+          <EntitySet Name="Servicio" EntityType="Self.Servicio" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK__Empleados__id_us__5CD6CB2B" Association="Self.FK__Empleados__id_us__5CD6CB2B">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="ServiciosFactura" Association="Self.ServiciosFactura">
+            <End Role="Huespedes" EntitySet="Huespedes" />
+            <End Role="Servicio" EntitySet="Servicio" />
+          </AssociationSet>
+          <FunctionImport Name="BuscarHuesped" ReturnType="Collection(hotelModel.BuscarHuesped_Result)">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apellidos" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="LoginProcedure" ReturnType="Collection(Boolean)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ObtenerDatosHabitacion" ReturnType="Collection(hotelModel.ObtenerDatosHabitacion_Result)">
+            <Parameter Name="ID_Habitacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ObtenerDatosHuespedPorTelefono" ReturnType="Collection(hotelModel.ObtenerDatosHuespedPorTelefono_Result)">
+            <Parameter Name="Telefono" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ObtenerDatosServicioPorIdHuesped" ReturnType="Collection(hotelModel.ObtenerDatosServicioPorIdHuesped_Result)">
+            <Parameter Name="IdHuesped" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ObtenerTotalPreciosServicioPorIdHuesped">
+            <Parameter Name="IdHuesped" Mode="In" Type="Int32" />
+            <Parameter Name="TotalPrecios" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="BuscarHuesped_Result">
+          <Property Type="Int32" Name="ID_Huesped" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="55" />
+          <Property Type="String" Name="Apellidos" Nullable="false" MaxLength="55" />
+          <Property Type="Int32" Name="Telefono" Nullable="false" />
+          <Property Type="Boolean" Name="is_deleted" Nullable="true" />
+          <Property Type="DateTime" Name="created_at" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="updated_at" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ObtenerDatosHabitacion_Result">
+          <Property Type="Int32" Name="ID_Habitacion" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="55" />
+          <Property Type="Int32" Name="Limite" Nullable="false" />
+          <Property Type="Int32" Name="precio_por_noche" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ObtenerDatosHuespedPorTelefono_Result">
+          <Property Type="Int32" Name="ID_Huesped" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="55" />
+          <Property Type="String" Name="Apellidos" Nullable="false" MaxLength="55" />
+          <Property Type="Int32" Name="Telefono" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ObtenerDatosServicioPorIdHuesped_Result">
+          <Property Type="Int32" Name="id_servicio" Nullable="false" />
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="precio" Nullable="false" />
+          <Property Type="Boolean" Name="is_deleted" Nullable="true" />
+          <Property Type="DateTime" Name="created_at" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="updated_at" Nullable="false" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hotelModelStoreContainer" CdmEntityContainer="hotelEntities">
+          <EntitySetMapping Name="Cuentas_por_cobrar">
+            <EntityTypeMapping TypeName="hotelModel.Cuentas_por_cobrar">
+              <MappingFragment StoreEntitySet="Cuentas_por_cobrar">
+                <ScalarProperty Name="id_cuenta" ColumnName="id_cuenta" />
+                <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+                <ScalarProperty Name="Fecha_vencimiento" ColumnName="Fecha_vencimiento" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Is_deleted" ColumnName="Is_deleted" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="hotelModel.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+                <ScalarProperty Name="Teléfono" ColumnName="Teléfono" />
+                <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Factura">
+            <EntityTypeMapping TypeName="hotelModel.Factura">
+              <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="ID_Factura" ColumnName="ID_Factura" />
+                <ScalarProperty Name="Monto_total" ColumnName="Monto_total" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="Id_reservacion" ColumnName="Id_reservacion" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Habitaciones">
+            <EntityTypeMapping TypeName="hotelModel.Habitaciones">
+              <MappingFragment StoreEntitySet="Habitaciones">
+                <ScalarProperty Name="ID_Habitacion" ColumnName="ID_Habitacion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Limite" ColumnName="Limite" />
+                <ScalarProperty Name="precio_por_noche" ColumnName="precio_por_noche" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Huespedes">
+            <EntityTypeMapping TypeName="hotelModel.Huespedes">
+              <MappingFragment StoreEntitySet="Huespedes">
+                <ScalarProperty Name="ID_Huesped" ColumnName="ID_Huesped" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servicio">
+            <EntityTypeMapping TypeName="hotelModel.Servicio">
+              <MappingFragment StoreEntitySet="Servicio">
+                <ScalarProperty Name="id_servicio" ColumnName="id_servicio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="hotelModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ServiciosFactura" TypeName="hotelModel.ServiciosFactura" StoreEntitySet="ServiciosFactura">
+            <EndProperty Name="Huespedes">
+              <ScalarProperty Name="ID_Huesped" ColumnName="id_huesped" />
+            </EndProperty>
+            <EndProperty Name="Servicio">
+              <ScalarProperty Name="id_servicio" ColumnName="id_servicio" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="BuscarHuesped" FunctionName="hotelModel.Store.BuscarHuesped">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="hotelModel.BuscarHuesped_Result">
+                <ScalarProperty Name="ID_Huesped" ColumnName="ID_Huesped" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LoginProcedure" FunctionName="hotelModel.Store.LoginProcedure" />
+          <FunctionImportMapping FunctionImportName="ObtenerDatosHabitacion" FunctionName="hotelModel.Store.ObtenerDatosHabitacion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="hotelModel.ObtenerDatosHabitacion_Result">
+                <ScalarProperty Name="ID_Habitacion" ColumnName="ID_Habitacion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Limite" ColumnName="Limite" />
+                <ScalarProperty Name="precio_por_noche" ColumnName="precio_por_noche" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ObtenerDatosHuespedPorTelefono" FunctionName="hotelModel.Store.ObtenerDatosHuespedPorTelefono">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="hotelModel.ObtenerDatosHuespedPorTelefono_Result">
+                <ScalarProperty Name="ID_Huesped" ColumnName="ID_Huesped" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ObtenerDatosServicioPorIdHuesped" FunctionName="hotelModel.Store.ObtenerDatosServicioPorIdHuesped">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="hotelModel.ObtenerDatosServicioPorIdHuesped_Result">
+                <ScalarProperty Name="id_servicio" ColumnName="id_servicio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ObtenerTotalPreciosServicioPorIdHuesped" FunctionName="hotelModel.Store.ObtenerTotalPreciosServicioPorIdHuesped" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

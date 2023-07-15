@@ -18,6 +18,22 @@ namespace DS_III_Proyecto_final_Caja_APP.User_Control
         public UC_CreditCard()
         {
             InitializeComponent();
+            LoadDate();
+        }
+
+        private void LoadDate()
+        {
+            using (SqlConnection connection = fn.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM [hotel].[dbo].[Huespedes]", connection);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                dataGridView1.DataSource = dataTable;
+            }
         }
 
         private void UC_CreditCard_Load(object sender, EventArgs e)
@@ -26,6 +42,28 @@ namespace DS_III_Proyecto_final_Caja_APP.User_Control
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = fn.GetConnection())
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO [hotel].[dbo].[Huespedes] ([Nombre], [Apellidos], [Telefono]) VALUES (@Nombre, @Apellidos, @Telefono)", connection);
+                command.Parameters.AddWithValue("@Nombre", txtName.Text);
+                command.Parameters.AddWithValue("@Apellidos", txtLastName.Text);
+                command.Parameters.AddWithValue("@Telefono", Convert.ToInt32(txtPhoneNumber.Text));
+
+                command.ExecuteNonQuery();
+                LoadDate();
+
+                
+            }
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }

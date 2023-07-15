@@ -33,6 +33,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obtenerDatosServicioPorIdHuespedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet2 = new DS_III_Proyecto_final_Caja_APP.hotelDataSet2();
             this.hotelDataSet1 = new DS_III_Proyecto_final_Caja_APP.hotelDataSet1();
             this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicioTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSet1TableAdapters.ServicioTableAdapter();
@@ -40,16 +44,12 @@
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.hotelDataSet2 = new DS_III_Proyecto_final_Caja_APP.hotelDataSet2();
-            this.obtenerDatosServicioPorIdHuespedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.obtenerDatosServicioPorIdHuespedTableAdapter = new DS_III_Proyecto_final_Caja_APP.hotelDataSet2TableAdapters.ObtenerDatosServicioPorIdHuespedTableAdapter();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obtenerDatosServicioPorIdHuespedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.obtenerDatosServicioPorIdHuespedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -69,9 +69,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Coral;
             this.label1.Location = new System.Drawing.Point(49, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(95, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Servicios";
             // 
@@ -88,6 +90,28 @@
             this.dataGridView1.Size = new System.Drawing.Size(240, 176);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            // 
+            // obtenerDatosServicioPorIdHuespedBindingSource
+            // 
+            this.obtenerDatosServicioPorIdHuespedBindingSource.DataMember = "ObtenerDatosServicioPorIdHuesped";
+            this.obtenerDatosServicioPorIdHuespedBindingSource.DataSource = this.hotelDataSet2;
+            // 
+            // hotelDataSet2
+            // 
+            this.hotelDataSet2.DataSetName = "hotelDataSet2";
+            this.hotelDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // hotelDataSet1
             // 
@@ -168,31 +192,9 @@
             this.label5.TabIndex = 31;
             this.label5.Text = "Precio total de servicios:";
             // 
-            // hotelDataSet2
-            // 
-            this.hotelDataSet2.DataSetName = "hotelDataSet2";
-            this.hotelDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // obtenerDatosServicioPorIdHuespedBindingSource
-            // 
-            this.obtenerDatosServicioPorIdHuespedBindingSource.DataMember = "ObtenerDatosServicioPorIdHuesped";
-            this.obtenerDatosServicioPorIdHuespedBindingSource.DataSource = this.hotelDataSet2;
-            // 
             // obtenerDatosServicioPorIdHuespedTableAdapter
             // 
             this.obtenerDatosServicioPorIdHuespedTableAdapter.ClearBeforeFill = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
             // 
             // UC_Services
             // 
@@ -208,10 +210,10 @@
             this.Name = "UC_Services";
             this.Size = new System.Drawing.Size(850, 443);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obtenerDatosServicioPorIdHuespedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.obtenerDatosServicioPorIdHuespedBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

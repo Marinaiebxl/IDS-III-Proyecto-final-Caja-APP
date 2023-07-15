@@ -26,10 +26,21 @@ namespace DS_III_Proyecto_final_Caja_APP.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SUSANPC;Initial Catalog=hotel;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source = SUSANPC\\\\;database=hotel;Trusted_Connection=True; TrustServerCertif" +
+            "icate=True;")]
         public string hotelConnectionString {
             get {
                 return ((string)(this["hotelConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SUSANPC;Initial Catalog=hotel;Integrated Security=True")]
+        public string hotelConnectionString1 {
+            get {
+                return ((string)(this["hotelConnectionString1"]));
             }
         }
     }
